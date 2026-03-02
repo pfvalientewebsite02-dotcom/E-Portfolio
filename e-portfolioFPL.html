@@ -318,7 +318,11 @@ p{
     cursor:pointer;
     z-index:1000;
 }
-
+@media screen and (max-width:768px){
+    .sidebar{
+        width:220px;
+    }
+}
 .sidebar{
     position:fixed;
     top:0;
@@ -458,7 +462,7 @@ h1{
     width:300px;
     height:480px;
 
-    background: gold
+    background: gold;
     backdrop-filter: blur(18px);
 
     border-radius:18px;
@@ -469,8 +473,8 @@ h1{
     overflow:hidden;
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,0.5),
-        inset 0 0 12px rgba(255,255,255,0.05);
+        0 15px 40px rgba(0,0,0,0.5);
+        inset: 0 0 12px rgba(255,255,255,0.05);
 
     transition:0.4s ease;
 }
@@ -931,8 +935,6 @@ h1{
     box-shadow:0 0 35px #38bdf8;
 }
 
-/* ================= CAREER PLAN ================= */
-
 /* ================= CLEAN CAREER PLAN ================= */
 
 .career-container{
@@ -1054,6 +1056,29 @@ h1{
     .career-image{
         margin-top:30px;
     }
+}
+@media screen and (max-width:768px){
+
+  .career-goals-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .career-goals-box{
+    width:100%;
+    height:auto;
+    position:relative;
+    flex-direction:column;
+  }
+
+  .career-goal-img{
+    position:relative;
+    width:100%;
+    height:auto;
+    left:0 !important;
+    margin-bottom:15px;
+    transform:none !important;
+  }
 }
 /* ================= ICT SKILLS WIREFRAME ================= */
 
@@ -1345,6 +1370,103 @@ h1{
     font-weight:bold;
     text-align:right;
     color:#38bdf8;
+}
+/* ================= GLOBAL RESPONSIVE FIX ================= */
+
+/* Prevent horizontal scroll */
+html, body{
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+/* Make all images responsive */
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* Sections spacing fix for mobile */
+@media screen and (max-width:768px){
+
+    section{
+        padding:60px 20px !important;
+        min-height:auto;
+    }
+
+    h1{
+        font-size:26px !important;
+    }
+
+    h2{
+        font-size:22px !important;
+    }
+
+    h3{
+        font-size:18px !important;
+    }
+
+    p{
+        font-size:15px !important;
+    }
+}
+@media screen and (max-width:768px){
+
+    .home-container{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    .school-id{
+        width:90%;
+        height:auto;
+        flex-direction:column;
+    }
+
+    .id-left{
+        width:100%;
+        writing-mode:horizontal-tb;
+        transform:none;
+        height:40px;
+    }
+
+    .id-photo{
+        width:140px;
+        height:160px;
+    }
+
+    .lanyard-strap{
+        height:160px;
+        font-size:12px;
+    }
+
+}
+@media screen and (max-width:768px){
+
+    .card{
+        width:100% !important;
+    }
+
+    .pp-column{
+        width:100% !important;
+    }
+
+    .wire-box{
+        width:100% !important;
+    }
+
+    .immersion-left,
+    .immersion-right{
+        width:100% !important;
+    }
+
+    .ca-box{
+        width:100% !important;
+    }
+
+    .ack-box{
+        width:100% !important;
+    }
 }
 </style>
 </head>
@@ -2282,18 +2404,26 @@ function toggleMenu(){
 
 <script>
 const text = "PF V. Taruza";
+const typingElement = document.getElementById("typed-name");
+
 let index = 0;
 const speed = 100;
 
 function typeEffect() {
+    if (!typingElement) return;
+
     if (index < text.length) {
-        document.getElementById("typed-name").innerHTML += text.charAt(index);
+        typingElement.innerHTML += text.charAt(index);
         index++;
         setTimeout(typeEffect, speed);
     }
 }
 
-window.onload = typeEffect;
+window.addEventListener("load", () => {
+    typingElement.innerHTML = ""; // clear first
+    index = 0;
+    typeEffect();
+});
 </script>
 <script>
 // Company image scroll animation
@@ -2342,12 +2472,7 @@ function startPortfolio(){
 window.addEventListener("load", ()=>{
     document.body.style.overflow = "hidden";
 });
-</script>
 
-/* Prevent scrolling before start */
-window.onload = function(){
-    document.body.style.overflow = "hidden";
-};
 </script>
 </body>
 </html>
