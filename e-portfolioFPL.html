@@ -1,0 +1,2305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Portfolio | PF Taruza</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+    
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+/* ================= FRONT PAGE ANIMATION ================= */
+
+/* Fade in landing page */
+#front-page{
+    animation: frontFadeIn 1s ease;
+}
+
+/* Hero box floating animation */
+.front-content{
+    animation: heroFloat 5s ease-in-out infinite;
+}
+
+/* Start button pulse glow */
+.front-content button{
+    animation: buttonPulse 2s infinite;
+}
+
+/* Fade animation */
+@keyframes frontFadeIn{
+    from{
+        opacity:0;
+        transform: scale(1.05);
+    }
+    to{
+        opacity:1;
+        transform: scale(1);
+    }
+}
+
+/* Floating hero box */
+@keyframes heroFloat{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-12px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* Start button glow pulse */
+@keyframes buttonPulse{
+    0%{
+        box-shadow:0 0 10px rgba(56,189,248,0.4);
+    }
+    50%{
+        box-shadow:0 0 30px rgba(56,189,248,0.8);
+    }
+    100%{
+        box-shadow:0 0 10px rgba(56,189,248,0.4);
+    }
+}
+/* ================= FRONT PAGE FULL BLUR OVERLAY ================= */
+
+#front-page{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    overflow:hidden;
+}
+
+/* Background Image Layer */
+#front-page::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url("twabackgroundlogin.jpeg") center/cover no-repeat fixed;
+    filter: blur(12px);
+    transform: scale(1.1); /* prevents white edges after blur */
+    z-index:-2;
+}
+
+/* Dark Overlay */
+#front-page::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+    z-index:-1;
+}
+
+/* Full page blur layer */
+#front-page::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    backdrop-filter: blur(18px);
+    background:rgba(0,0,0,0.45);
+
+    z-index:-1;
+}
+
+.front-content{
+    text-align:center;
+    padding:50px;
+    border-radius:20px;
+
+    background:rgba(0,0,0,0.55);
+    backdrop-filter: blur(12px);
+
+    box-shadow:0 0 40px rgba(56,189,248,0.4);
+}
+
+/* ================= MAIN PAGE BACKGROUND FIX ================= */
+
+body{
+    position: relative;
+    background: url("academyschool.jpg") center/cover no-repeat fixed;
+    color:white;
+    overflow-x:hidden;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Dark readability overlay for main page */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background: rgba(2,6,23,0.75);
+    backdrop-filter: blur(8px);
+
+    z-index:-1;
+}
+
+/* ================= PREMIUM TITLES ================= */
+h1{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:42px;
+    margin-bottom:25px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+h2{
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:28px;
+    margin-bottom:15px;
+    letter-spacing:1px;
+}
+
+h3{
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size:20px;
+    margin-bottom:10px;
+}
+/* Section spacing improvement */
+section{
+    min-height:100vh;
+    padding:100px 12%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+/* Paragraph styling */
+p{
+    font-size:17px;
+    max-width:800px;
+}
+/* ================= CAREER GOALS ================= */
+
+.career-goals-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.career-goals-container img{
+    width:250px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.career-goals-text{
+    max-width:500px;
+    text-align:left;
+    line-height:1.8;
+}
+/* ===== GAMING STYLE SKILL ICONS ===== */
+
+.skill-icons img{
+    width:80px;
+    height:100px;
+    object-fit:contain;
+    filter: drop-shadow(0 0 6px #0ea5e9);
+    animation: neonPulse 2s infinite alternate;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Neon pulse animation */
+@keyframes neonPulse{
+    0%{
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px #0ea5e9);
+    }
+    100%{
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 15px #38bdf8);
+    }
+}
+
+/* Staggered animation timing */
+.skill-icons img:nth-child(1){
+    animation-delay:0s;
+}
+
+.skill-icons img:nth-child(2){
+    animation-delay:0.3s;
+}
+
+.skill-icons img:nth-child(3){
+    animation-delay:0.6s;
+}
+
+/* Hover power effect */
+.skill-icons img:hover{
+    transform: scale(1.25) rotate(8deg);
+    filter: drop-shadow(0 0 20px #38bdf8);
+}
+/* ================= NAVIGATION ================= */
+
+.menu-btn{
+    position:fixed;
+    top:15px;
+    right:20px;
+    font-size:28px;
+    cursor:pointer;
+    z-index:1000;
+}
+
+.sidebar{
+    position:fixed;
+    top:0;
+    right:-270px;
+    width:260px;
+    height:100%;
+    background:#1e293b;
+    padding:30px 20px;
+    transition:0.4s;
+    overflow-y:auto;
+}
+
+
+.sidebar.active{
+    right:0;
+}
+
+.sidebar h2{
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:12px 0;
+}
+
+.sidebar a:hover{
+    color:#38bdf8;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    min-height:100vh;
+    padding:80px 10%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+h1{
+    font-size:35px;
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+/* ================= HOME LAYOUT ================= */
+
+.home-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    flex-wrap:wrap;
+}
+
+/* ===== ID BACKGROUND ===== */
+.id-background{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+}
+
+/* ===== LANYARD STRAP PREMIUM FIX ===== */
+
+.lanyard-strap{
+    width:70px;
+    height:230px;
+    background: linear-gradient(180deg, #0f5c2e, #1f8a4c);
+    color:#ffd700;
+
+    writing-mode:vertical-lr;
+    text-orientation:upright;
+
+    font-weight:bold;
+    letter-spacing:3px;
+    font-size:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.5),
+        inset 0 0 8px rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(6px);
+
+    transition:0.4s ease;
+}
+
+/* Hover glow premium effect */
+.lanyard-strap:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(56,189,248,0.6);
+}
+
+/* ===== METAL RING ===== */
+.lanyard-ring{
+    width:40px;
+    height:40px;
+    border:5px solid silver;
+    border-radius:50%;
+}
+
+/* ================= LANYARD SWAY ANIMATION ================= */
+
+.id-background{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+
+    animation: swayLanyard 6s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+/* Natural hanging swing effect */
+@keyframes swayLanyard{
+    0%{ transform: rotate(0deg); }
+    25%{ transform: rotate(2deg); }
+    50%{ transform: rotate(-2deg); }
+    75%{ transform: rotate(1deg); }
+    100%{ transform: rotate(0deg); }
+}
+
+/* ================= GLASSMORPHISM SCHOOL ID CARD ================= */
+
+.school-id{
+    width:300px;
+    height:480px;
+
+    background: gold
+    backdrop-filter: blur(18px);
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    display:flex;
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.5),
+        inset 0 0 12px rgba(255,255,255,0.05);
+
+    transition:0.4s ease;
+}
+
+/* Hover premium lift effect */
+.school-id:hover{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 0 40px rgba(56,189,248,0.5);
+}
+
+/* Left side modern strip */
+.id-left{
+    width:65px;
+
+    background: linear-gradient(180deg,#0f5c2e,#0c3b1f);
+
+    color:white;
+
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+
+    transform:rotate(180deg);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:13px;
+    font-weight:bold;
+
+    padding:12px;
+}
+
+/* Right ID panel */
+.id-right{
+    flex:1;
+    padding:18px;
+    text-align:center;
+}
+
+/* Logo glow effect */
+.id-logo img{
+    width:150px;
+    margin-bottom:12px;
+
+    filter: drop-shadow(0 0 8px rgba(56,189,248,0.6));
+}
+
+/* Photo frame premium border */
+.id-photo{
+    width:190px;
+    height:200px;
+
+    margin:12px auto;
+
+    border:2px solid rgba(56,189,248,0.6);
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.id-photo img{
+    width:105%;
+    height:105%;
+    object-fit:cover;
+}
+
+/* LEFT GREEN SIDE */
+.id-left{
+    width:60px;
+    background:#0f5c2e;
+    color:white;
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    transform:rotate(180deg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:bold;
+    text-align:center;
+    padding:10px;
+}
+
+/* RIGHT SIDE */
+.id-right{
+    flex:1;
+    padding:15px;
+    text-align:center;
+}
+
+/* LOGO */
+.id-logo img{
+    width:150px;
+    margin-bottom:10px;
+}
+
+/* PHOTO */
+.id-photo{
+    width:190px;
+    height:200px;
+    margin:10px auto;
+    border:3px solid #0f5c2e;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.id-photo img{
+    width:105%;
+    height:105%;
+    object-fit:cover;
+}
+
+/* INFO */
+.id-info{
+    margin-top:10px;
+    font-size:20px;
+}
+/* ================= ABOUT SECTION ================= */
+
+.about-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    flex-wrap:wrap;
+    margin-top:80px;
+}
+
+.about-text{
+    max-width:550px;
+}
+
+.typing-text{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:25px;
+    letter-spacing:1px;
+}
+
+.about-text p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:20px;
+    opacity:0.9;
+}
+
+/* IMAGE STYLE */
+.about-image img{
+    width:320px;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+    transition:0.4s ease;
+}
+
+.about-image img:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 35px #38bdf8;
+}
+/* IMAGE STYLE */
+.about-image img{
+    width:320px;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+    transition:0.4s ease;
+
+    /* Animation */
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes floatImage{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* Hover Glow Effect */
+.about-image img:hover{
+    box-shadow:0 0 40px #38bdf8;
+    transform: scale(1.05);
+}
+
+/* Cursor Blink */
+.cursor{
+    animation:blink 1s infinite;
+    color:#38bdf8;
+}
+
+@keyframes blink{
+    0%{opacity:1;}
+    50%{opacity:0;}
+    100%{opacity:1;}
+}
+
+/* Responsive */
+@media screen and (max-width:768px){
+
+    .about-container{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+    }
+
+    .typing-text{
+        font-size:32px;
+    }
+
+    .about-image img{
+        width:230px;
+    }
+}
+
+/* ===== CARDS ===== */
+.card-container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    width:250px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:#334155;
+}
+/* ================= IMMERSION NEW LAYOUT ================= */
+
+.immersion-container{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.immersion-box{
+    width:340px;
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    border:2px solid #475569;
+    transition:0.3s;
+}
+
+.immersion-box:hover{
+    border-color:#38bdf8;
+    transform:translateY(-6px);
+}
+
+.immersion-header{
+    text-align:center;
+    font-weight:bold;
+    background:#334155;
+    padding:10px;
+    margin-bottom:20px;
+    letter-spacing:1px;
+    color:#38bdf8;
+}
+
+.immersion-card{
+    background:#0f172a;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
+    border:1px solid #475569;
+}
+
+.immersion-card h3{
+    margin-bottom:8px;
+    color:#38bdf8;
+}
+
+.task-card{
+    background:#0f172a;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
+    border:1px solid #475569;
+    transition:0.3s;
+}
+
+.task-card:hover{
+    border-color:#38bdf8;
+    transform:translateX(5px);
+}
+
+.view-btn{
+    width:100%;
+    padding:10px;
+    background:#38bdf8;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.view-btn:hover{
+    background:#0ea5e9;
+}
+
+.experience-quote{
+    margin-top:15px;
+    padding:15px;
+    background:#334155;
+    border-left:4px solid #38bdf8;
+    font-style:italic;
+}
+/* ===== COMPANY PHOTO LAYOUT ===== */
+.immersion-company{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+/* Company image */
+.company-photo img{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:12px;
+    border:2px solid #38bdf8;
+    transition:0.4s ease;
+}
+
+/* Hover glow */
+.company-photo img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #38bdf8;
+}
+
+/* Company info text */
+.company-info{
+    flex:1;
+}
+
+/* Responsive */
+@media screen and (max-width:768px){
+    .immersion-company{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .company-photo img{
+        width:130px;
+        height:130px;
+    }
+}
+/* ===== COMPANY PHOTO ANIMATION ===== */
+
+.company-photo img{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:12px;
+    border:2px solid #38bdf8;
+
+    /* Initial hidden state */
+    opacity:0;
+    transform:translateX(-30px);
+    transition:all 0.6s ease;
+
+    /* Floating animation */
+    animation: floatCompany 4s ease-in-out infinite;
+}
+
+/* Fade + Slide In when visible */
+.company-photo img.visible{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* Floating effect */
+@keyframes floatCompany{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-8px); }
+    100%{ transform:translateY(0px); }
+}
+
+/* Subtle glow pulse */
+@keyframes glowPulse{
+    0%{ box-shadow:0 0 10px #38bdf8; }
+    100%{ box-shadow:0 0 25px #0ea5e9; }
+}
+
+.company-photo img.visible{
+    animation: floatCompany 4s ease-in-out infinite,
+               glowPulse 2s infinite alternate;
+}
+
+/* Hover effect */
+.company-photo img:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 35px #38bdf8;
+}
+/* ===== COMPANY PHOTO ANIMATION ===== */
+
+.company-photo img{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:12px;
+    border:2px solid #38bdf8;
+
+    /* Initial hidden state */
+    opacity:0;
+    transform:translateX(-30px);
+    transition:all 0.6s ease;
+
+    /* Floating animation */
+    animation: floatCompany 4s ease-in-out infinite;
+}
+
+/* Fade + Slide In when visible */
+.company-photo img.visible{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* Floating effect */
+@keyframes floatCompany{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-8px); }
+    100%{ transform:translateY(0px); }
+}
+
+/* Subtle glow pulse */
+@keyframes glowPulse{
+    0%{ box-shadow:0 0 10px #38bdf8; }
+    100%{ box-shadow:0 0 25px #0ea5e9; }
+}
+
+.company-photo img.visible{
+    animation: floatCompany 4s ease-in-out infinite,
+               glowPulse 2s infinite alternate;
+}
+
+/* Hover effect */
+.company-photo img:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 35px #38bdf8;
+}
+
+/* ================= CAREER PLAN ================= */
+
+/* ================= CLEAN CAREER PLAN ================= */
+
+.career-container{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.career-content{
+    width:700px;
+    text-align:center;
+}
+
+.plan-box{
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.plan-box h3{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.plan-box ul{
+    margin-top:10px;
+    line-height:1.8;
+    text-align:left;
+    display:inline-block;
+}
+
+.career-image{
+    margin-bottom:30px;
+}
+
+.career-image img{
+    width:100%;
+    max-width:350px;
+    border-radius:20px;
+    border:2px solid #38bdf8;
+    box-shadow:0 20px 40px rgba(0,0,0,0.6);
+    transition:0.4s ease;
+}
+
+.career-image img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 35px #38bdf8;
+}
+
+.career-paragraph{
+    margin-bottom:25px;
+    line-height:1.8;
+}
+
+.quote{
+    font-style:italic;
+    opacity:0.8;
+}
+
+/* ================= CAREER SIDE IMAGE ================= */
+
+.career-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.career-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.career-image img{
+    width:100%;
+    max-width:350px;
+    border-radius:20px;
+    border:2px solid #38bdf8;
+    box-shadow:0 20px 40px rgba(0,0,0,0.6);
+
+    /* Hidden first */
+    opacity:0;
+    transform:translateX(40px);
+    transition:all 0.8s ease;
+}
+
+/* When visible */
+.career-image img.visible{
+    opacity:1;
+    transform:translateX(0);
+    animation: floatCareer 4s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes floatCareer{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-10px); }
+    100%{ transform:translateY(0px); }
+}
+
+/* Hover glow */
+.career-image img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 35px #38bdf8;
+}
+
+/* Responsive */
+@media screen and (max-width:768px){
+    .career-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .career-image{
+        margin-top:30px;
+    }
+}
+/* ================= ICT SKILLS WIREFRAME ================= */
+
+.skills-wireframe{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.wire-box{
+    background:#1e293b;
+    width:320px;
+    padding:20px;
+    border-radius:10px;
+    text-align:left;
+    border:2px solid #94a3b8;
+    transition:0.3s;
+}
+
+.wire-box:hover{
+    transform:translateY(-6px);
+    border-color:#38bdf8;
+}
+
+.wire-header{
+    background:#334155;
+    padding:8px;
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.wire-box ul{
+    line-height:2;
+    margin-left:20px;
+}
+
+.wire-icons{
+    margin-top:30px;
+    text-align:center;
+    font-size:22px;
+    opacity:0.6;
+}
+
+/* Tools Grid */
+.tools-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.tools-grid img{
+    width:100%;
+    height:60px;
+    object-fit:contain;
+}
+
+/* Outputs */
+.output-grid{
+    display:grid;
+    gap:15px;
+}
+
+.output-grid img{
+    width:150px;
+    border-radius:8px;
+}
+/* ================= PROJECTS & PERFORMANCE ================= */
+
+.pp-container{
+    display:flex;
+    gap:50px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:50px;
+}
+
+.pp-column{
+    width:480px;
+    border:2px solid #94a3b8;
+    padding:25px;
+    border-radius:10px;
+    background:#1e293b;
+    transition:0.3s;
+}
+
+.pp-column:hover{
+    border-color:#38bdf8;
+}
+
+.pp-header{
+    text-align:center;
+    font-weight:bold;
+    padding:10px;
+    margin-bottom:30px;
+    background:#334155;
+    letter-spacing:1px;
+}
+
+.pp-cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:30px;
+}
+
+.pp-card{
+    width:200px;
+    background:#0f172a;
+    padding:15px;
+    border-radius:8px;
+    text-align:left;
+    border:1px solid #475569;
+    transition:0.3s;
+}
+
+.pp-card:hover{
+    transform:translateY(-6px);
+    border-color:#38bdf8;
+}
+
+.pp-card h3{
+    margin-bottom:10px;
+    color:#38bdf8;
+}
+
+.pp-list{
+    margin-top:10px;
+    line-height:2;
+    padding-left:20px;
+}
+
+/* ================= CERTIFICATES & ACHIEVEMENTS ================= */
+
+.ca-container{
+    display:flex;
+    justify-content:center;
+    margin-top:50px;
+}
+
+/* Main Card */
+.ca-box{
+    width:900px;
+    padding:30px;
+    border:2px solid #94a3b8;
+    border-radius:12px;
+    background:#1e293b;
+    text-align:center;
+    transition:0.4s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.ca-box:hover{
+    border-color:#38bdf8;
+    box-shadow:0 0 25px #38bdf8;
+}
+
+.ca-header{
+    font-weight:bold;
+    margin-bottom:25px;
+    padding:12px;
+    background:#334155;
+    letter-spacing:1px;
+    color:#38bdf8;
+    border-radius:6px;
+}
+
+/* ===== SLIDER ===== */
+
+.ca-slider{
+    width:100%;
+    overflow:hidden;
+    margin-bottom:30px;
+}
+
+.ca-track{
+    display:flex;
+    gap:30px;
+    animation: scrollCertificates 25s linear infinite;
+}
+
+.ca-img{
+    width:160px;
+    height:130px;
+    object-fit:contain;
+    border-radius:10px;
+    transition:0.4s ease;
+}
+
+/* Hover */
+.ca-img:hover{
+    transform:scale(1.15);
+    box-shadow:0 0 20px #38bdf8;
+}
+
+/* Infinite Scroll */
+@keyframes scrollCertificates{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-50%); }
+}
+
+/* List Style */
+.ca-box ul{
+    text-align:left;
+    line-height:2;
+    padding-left:20px;
+    margin-top:15px;
+}
+/* ===== IMMERSION TASK CARD IMAGE STYLE ===== */
+
+.immersion-task{
+    text-align:center;
+    padding:18px;
+    transition:0.4s ease;
+}
+
+.task-img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:12px;
+    border:2px solid #475569;
+    transition:0.4s ease;
+}
+
+/* Hover glow effect */
+.immersion-task:hover{
+    transform:translateY(-6px);
+    border-color:#38bdf8;
+    box-shadow:0 0 25px rgba(56,189,248,0.4);
+}
+
+.task-img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #38bdf8;
+}
+/* Layout Fix */
+.immersion-container{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+/* Left & Right Panels */
+.immersion-left,
+.immersion-right{
+    width:380px;
+}
+
+/* Responsive Stack */
+@media screen and (max-width:768px){
+    .immersion-left,
+    .immersion-right{
+        width:100%;
+    }
+}
+/* ================= ACKNOWLEDGEMENT ================= */
+
+.ack-container{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.ack-box{
+    width:700px;
+    background:#1e293b;
+    padding:30px;
+    border-radius:12px;
+    border:2px solid #94a3b8;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    line-height:1.8;
+    transition:0.4s ease;
+}
+
+.ack-box:hover{
+    border-color:#38bdf8;
+    box-shadow:0 0 25px #38bdf8;
+}
+
+.ack-signature{
+    margin-top:25px;
+    font-weight:bold;
+    text-align:right;
+    color:#38bdf8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div class="sidebar" id="sidebar">
+    <h2>Table of Contents</h2>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#reflection">Learning Reflections</a>
+    <a href="#best">Best Output</a>
+    <a href="#skills">ICT Skills</a>
+    <a href="#Projects&Performance">Projects & Performance Tasks</a>
+    <a href="#certificates">Certificates & Achievements</a>
+    <a href="#immersion">Work Immersion</a>
+    <a href="#career">Career Plan</a>
+</div>
+
+<!-- ================= FRONT LANDING PAGE ================= -->
+<div id="front-page">
+
+    <div class="front-content">
+
+        <h1>Digital Design E-Portfolio</h1>
+
+        <p>Welcome to My Portfolio</p>
+
+        <button onclick="startPortfolio()">START</button>
+
+    </div>
+
+</div>
+
+<!-- ================= HOME ================= -->
+<section id="home">
+<div class="home-container">
+
+<div class="id-background">
+
+    <!-- LANYARD STRAP -->
+    <div class="lanyard-strap">
+        TAYABAS WESTERN ACADEMY
+    </div>
+
+    <!-- METAL RING -->
+    <div class="lanyard-ring"></div>
+
+    <!-- ID CARD -->
+    <div class="id-wrapper">
+        <div class="school-id">
+
+            <div class="id-left">
+                SENIOR HIGH SCHOOL<br>DEPARTMENT
+            </div>
+
+            <div class="id-right">
+
+                <div class="id-logo">
+                    <img src="TWALOGO.png" alt="School Logo">
+                </div>
+
+                <div class="id-photo">
+                    <img src="TARUZA, PF.png" alt="Student Photo">
+                </div>
+
+                <div class="id-info">
+                    <strong>PF V. TARUZA</strong><br>
+                    12 - TVL ICT<br>
+                    A.Y. 2025 - 2026<br>
+                    2022-2843
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <h1 class="typing">Digital Design E-Portfolio</h1>
+    <p style="margin-top:20px;">
+        <strong>Name:</strong> PF Taruza<br><br>
+        <strong>Strand:</strong> ICT<br><br>
+        <strong>School Year:</strong> 2025-2026
+    </p>
+</div>
+</div>
+</section>
+
+<!-- ================= ABOUT ME ================= -->
+<section id="about">
+
+<div class="about-container">
+
+    <!-- LEFT SIDE -->
+    <div class="about-text">
+
+        <h1 class="typing-text">
+            Hello, I'm <span id="typed-name"></span><span class="cursor">|</span>
+        </h1>
+
+        <p>
+        Ako ay isang 18 taong gulang na mag-aaral sa Grade 12 sa Tayabas Western Academy sa ilalim ng TVL ICT strand, na nakatuon sa Computer Programming.
+        </p>
+
+        <p>
+        Mahilig akong mag-code, bumuo ng mga website at aplikasyon, at patuloy na nag-aaral at nagsasaliksik tungkol sa mga bagong teknolohiya. 
+        May hilig ako sa inobasyon, pagkamalikhain, at sa pagbuo ng mga digital na solusyon na may mahalagang epekto.
+        </p>
+
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="about-image">
+        <img src="ABOUTPF.png" alt="Profile Picture">
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= ICT SKILLS ================= -->
+<section id="skills">
+<h1>ICT Skills</h1>
+
+<div class="card-container">
+
+    <!-- Skill Icons Card -->
+    <div class="card">
+        <h3>HTML, CSS, & JavaScript</h3>
+        <div class="skill-icons">
+            <img src="IconHTML.png" alt="HTML">
+            <img src="IconJavascript.png" alt="JavaScript">
+            <img src="IconCSS.png" alt="CSS">
+        </div>
+    </div>
+
+    <!-- Interests Card -->
+    <div class="card">
+        <h3>Interests</h3>
+        <ul style="list-style:none; padding:0; line-height:1.8;">
+            <li>🌟 Pagbuo ng mga website at aplikasyon</li>
+            <li>🖥 Pag-explore ng mga bagong programming language</li>
+            <li>🎨 UI/UX design</li>
+            <li>🤖 Pag-aaral tungkol sa AI at automation</li>
+        </ul>
+    </div>
+
+</div> <br />
+<p>&nbsp; &nbsp;Bilang isang mag-aaral sa Grade 12 TVL ICT na nag-specialize sa Computer Programming, nakabuo ako ng mga kasanayan sa coding, web development, at paggamit ng iba’t ibang digital tools. 
+    Sabik kong magamit ang mga kasanayang ito sa pagbuo ng mga aplikasyon, website, at iba pang digital na kagamitan.
+</p>
+</section>
+
+<!-- ================= CAREER GOALS ================= -->
+<section id="career-goals">
+  <h1>Career Goals</h1>
+
+  <div class="career-goals-container">
+
+    <!-- Paragraph Left -->
+    <div class="career-goals-text">
+      <p>
+        Ang aking layunin sa karera ay maging isang propesyonal na software developer na bubuo ng mga makabago at kapaki-pakinabang na 
+        aplikasyon at website na makakatulong sa pang-araw-araw na buhay ng mga tao. Pinili ko ang landas na ito dahil mahilig ako sa coding, 
+        paglutas ng problema, at pag-explore ng mga bagong teknolohiya.
+      </p>
+
+      <p>
+        Upang maabot ito, plano kong ipagpatuloy ang pag-aaral ng mga programming language, gumawa ng mga propesyonal na proyekto, at 
+        makakuha ng aktwal na karanasan sa pamamagitan ng internship at pakikipagtulungan sa iba. Sa hinaharap, nais 
+        kong makatulong sa pagbuo ng mga makabuluhang teknolohikal na solusyon na may positibong epekto sa komunidad.
+      </p>
+    </div>
+
+    <!-- Image Right in Box -->
+    <div class="career-goals-box" id="career-box">
+      <img src="CareerGoalTime.png" alt="Career Goal" class="career-goal-img">
+      <img src="CareerGoalWeb.png" alt="Career Goal" class="career-goal-img">
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ================= CAREER GOALS IMAGES ================= */
+.career-goals-box {
+  width: 320px;
+  height: 220px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Stack images slightly overlapping */
+.career-goal-img {
+  width: 180px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Overlap second image slightly */
+.career-goal-img:nth-child(2) {
+  left: 50px;
+}
+
+/* Hover effect */
+.career-goals-box:hover .career-goal-img {
+  transform: translateY(-5px);
+}
+
+/* Clicked / Active animation */
+.career-goal-img.active:nth-child(1) {
+  transform: translateX(-40px) translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px #38bdf8, 0 0 40px #0ea5e9;
+}
+
+.career-goal-img.active:nth-child(2) {
+  transform: translateX(40px) translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px #38bdf8, 0 0 40px #0ea5e9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  .career-goals-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .career-goals-box {
+    width: 280px;
+    height: auto;
+  }
+
+  .career-goal-img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 0 !important; /* remove overlap */
+    margin-bottom: 10px;
+    transform: none !important; /* remove slide on mobile */
+  }
+}
+</style>
+
+<script>
+const careerBox = document.getElementById('career-box');
+const images = careerBox.querySelectorAll('.career-goal-img');
+
+careerBox.addEventListener('click', () => {
+  images.forEach(img => {
+    img.classList.toggle('active'); // toggle slide apart
+  });
+});
+</script>
+
+<!-- ================= LEARNING REFLECTIONS ================= -->
+<section id="reflection">
+<h1>Learning Reflections</h1>
+
+<p>
+&nbsp; &nbsp; Sa aking dalawang taon sa senior high school, natutunan ko ang kahalagahan ng paniniwala sa aking sarili at pag-iisip nang mabuti bago gumawa ng desisyon, 
+dahil hindi lahat ng tao ay mananatili sa aking buhay at kailangan kong matutong tumayo sa sarili kong mga paa. Nalaman ko rin ang 
+halaga ng pagiging mapagpasalamat sa mga taong sumusuporta at nagtitiwala sa akin.
+
+</p><br />
+<p>
+&nbsp; &nbsp; Hindi naging madali ang aking paglalakbay noong unang araw ko sa Grade 11 dahil wala akong kakilala dahil ang aking mga kaibigan ay pumili ng ibang strand. 
+Sa Grade 12, nakaramdam ako ng matinding pressure at pagdududa kung kaya kong harapin ang mga hamon. Gayunpaman, sa 
+pamamagitan ng pananampalataya sa Diyos, tiwala sa sarili, at tuloy-tuloy na suporta ng aking pamilya at mga kaibigan,
+nalampasan ko ang aking mga takot at pinagdaraanan. Ang mga karanasang ito ay nakatulong upang maging mas matatag, mas may kumpiyansa, at mas handa sa mga hamon ng buhay.
+</p>
+
+<!-- ===== IMAGE SHOWCASE ===== -->
+<div class="reflection-images">
+    <img src="LEARNINGREFLECTION1.png" alt="Reflection Image 1">
+    <img src="LEARNINGREFLECTION2.jfif" alt="Reflection Image 2">
+    <img src="LEARNINGREFLECTION3.jfif" alt="Reflection Image 3">
+    <img src="LEARNINGREFLECTION4.jfif" alt="Reflection Image 4">
+</div>
+
+</section>
+
+<style>
+/* ================= LEARNING REFLECTIONS IMAGES ================= */
+.reflection-images {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 15px 0;
+    margin-top: 20px;
+    scroll-behavior: smooth;
+}
+
+.reflection-images img {
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex-shrink: 0;
+}
+
+.reflection-images img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #38bdf8;
+}
+
+/* Scrollbar styling for modern browsers */
+.reflection-images::-webkit-scrollbar {
+    height: 8px;
+}
+
+.reflection-images::-webkit-scrollbar-thumb {
+    background: #38bdf8;
+    border-radius: 4px;
+}
+
+.reflection-images::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+</style>
+
+<!-- ================= BEST OUTPUT ================= -->
+<section id="best" class="fade-section">
+<h1>Best Output</h1>
+
+<div class="card-container">
+
+    <div class="card fade-in">
+        <h3>Filipino sa Piling Larang (TEK-VOC)</h3>
+        <div class="output-scroll">
+            <img src="OUTPUTFPL1.png" alt="Filipino Output">
+        </div>
+         <!-- Paragraph about this output -->
+    <p style="margin-top:10px; font-size:15px; line-height:1.6;">
+        Sa asignaturang ito, nakagawa ako ng iba’t ibang sulatin at proyekto na nagpapakita ng 
+        aking pang-unawa sa wikang Filipino at kultura sa praktikal na mga konteksto.
+    </p>
+    </div>
+
+    <div class="card fade-in">
+        <h3>English for Academic and Professional Purposes</h3>
+        <div class="output-scroll">
+            <img src="OutputEAPP1.jfif" alt="English Output">
+            <img src="OUTPUTEAPP2.jfif" alt="English Output">
+        </div>
+         <!-- Paragraph about this output -->
+    <p style="margin-top:10px; font-size:15px; line-height:1.6;">
+       Sa asignaturang ito, nakabuo kami ng concept paper kung saan nangalap at nagsuri kami ng mga mahahalagang impormasyon na kailangan para sa aming pag-aaral.
+    </p>
+    </div>
+
+    <div class="card fade-in">
+        <h3>Inquiries, Investigations, and Immersion</h3>
+        <div class="output-scroll">
+            <img src="OUTPUT3I'S2.png" alt="Research Output">
+            <img src="OUTPUT3I'S4.png" alt="Research Output">
+            <img src="OUTPUT3I'S3.jpg" alt="Research Output">
+        </div>
+         <!-- Paragraph about this output -->
+    <p style="margin-top:10px; font-size:15px; line-height:1.6;">
+      Nagsagawa kami ng isang pananaliksik at nakabuo ng website na pinamagatang **"Development of a Portfolio-Based (Work-Immersion) Website para sa mga Mag-aaral ng Grade 12 ng Tayabas Western Academy, Candelaria, Quezon."
+      Ako ang nagsilbing team leader na namahala sa pagpaplano, pagbuo, at pagpapatupad ng proyekto.
+
+    </p>
+    </div>
+
+    <div class="card fade-in">
+        <h3>Work Immersion</h3>
+        <div class="output-scroll">
+            <img src="OUTPUTWORK2.png" alt="Immersion Output">
+        </div>
+         <!-- Paragraph about this output -->
+    <p style="margin-top:10px; font-size:15px; line-height:1.6;">
+       Ginampanan ko ang aking mga tungkulin sa front desk office kung saan tinulungan ko ang mga mag-aaral sa pagsagot sa kanilang mga alalahanin at pagtugon sa kanilang mga katanungan sa isang propesyonal na paraan.
+    </p>
+    </div>
+
+    <div class="card fade-in">
+        <h3>Physical Education and Health</h3>
+        <div class="output-scroll">
+            <img src="OUTPUTPEAH1.jfif" alt="PE & Health Output">
+            <img src="OUTPUTPEAH2.jfif" alt="PE & Health Output">
+        </div>
+         <!-- Paragraph about this output -->
+    <p style="margin-top:10px; font-size:15px; line-height:1.6;">
+       Nagsagawa kami ng isang intersiyong pagtatanghal na batay sa "Snow White and the Seven Dwarfs". Ako ang nagsilbing direktor ng presentasyon at gumanap din bilang Prinsipe. 
+       Itinuturing ko itong isa sa aking pinakamahusay na output dahil nagkaroon ako ng pagkakataong maipakita ang aking pamumuno, pagkamalikhain, pagtutulungan, at 
+       kumpiyansa sa pamamahala ng produksyon at pagganap sa entablado.
+    </p>
+    </div>
+
+    <div class="card fade-in">
+        <h3>Computer Programming</h3>
+        <div class="output-scroll">
+            <img src="OUTPUTCP1.png" alt="Programming Output">
+            <img src="OUTPUTCP2.png" alt="Programming Output">
+        </div>
+         <!-- Paragraph about this output -->
+    <p style="margin-top:10px; font-size:15px; line-height:1.6;">
+        Ako ang responsable sa pag-cocode at pagbuo ng aming website para sa 3I’s project na ipinakita sa aming mga respondent at guro para sa pagsusuri. 
+        Sa asignaturang ito, mas napalawak at naipakita ko ang aking kaalaman at kasanayan na natutunan ko sa programming. Nakatulong ang karanasang ito upang masukat at mapagtanto ko kung gaano 
+        kalaki ang aking natutunan at naibagay sa aking kakayahan sa programming.
+    </p>
+    </div>
+
+    <div class="card fade-in">
+        <h3>Computer System Services</h3>
+        <div class="output-scroll">
+            <img src="OUTPUTCSS1.jfif" alt="CSS Output">
+        </div>
+         <!-- Paragraph about this output -->
+    <p style="margin-top:10px; font-size:15px; line-height:1.6;">
+       Maingat kong binaklas ang system unit, tinanggal at nilinis ang bawat bahagi nito, at muling binuo ang mga piyesa sa kanilang tamang posisyon upang matiyak ang maayos na paggana ng sistema.
+    </p>
+    </div>
+
+</div>
+</section>
+
+<style>
+/* ================= BEST OUTPUT ANIMATIONS ================= */
+
+/* Subtle fade-in for entire section */
+.fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Fade-in on scroll for cards */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Slide-in for images inside each card */
+.output-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+.output-scroll img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.output-scroll img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #38bdf8;
+}
+
+/* Scrollbar styling */
+.output-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+.output-scroll::-webkit-scrollbar-thumb {
+    background: #38bdf8;
+    border-radius: 4px;
+}
+.output-scroll::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+</style>
+
+<script>
+// Fade-in for entire section
+const bestSection = document.querySelector('.fade-section');
+window.addEventListener('scroll', () => {
+    const rect = bestSection.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+        bestSection.style.opacity = 1;
+        bestSection.style.transform = 'translateY(0)';
+    }
+});
+
+// Fade-in on scroll for cards
+const fadeElements = document.querySelectorAll('.fade-in');
+window.addEventListener('scroll', () => {
+    fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            el.style.opacity = 1;
+            el.style.transform = 'translateY(0)';
+        }
+    });
+});
+
+// Slide-in images inside cards
+const outputImages = document.querySelectorAll('.output-scroll img');
+window.addEventListener('scroll', () => {
+    outputImages.forEach((img, index) => {
+        const rect = img.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            setTimeout(() => {
+                img.style.opacity = 1;
+                img.style.transform = 'translateY(0)';
+            }, index * 150); // staggered animation
+        }
+    });
+});
+</script>
+
+<!-- ================= ICT SKILLS WIREFRAME ================= -->
+<section id="skills">
+<h1>ICT SKILLS SHOWCASE</h1>
+
+<div class="skills-wireframe">
+
+    <!-- Programming Languages -->
+    <div class="wire-box">
+        <div class="wire-header">Programming Languages</div>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <div class="wire-icons">&lt;/&gt; {{ }}</div>
+    </div>
+
+    <!-- Software & Tools -->
+    <div class="wire-box">
+        <div class="wire-header">Software & Tools</div>
+        <div class="tools-grid">
+            <img src="Software1.jfif" alt="Software">
+            <img src="Software3.jfif" alt="Software">
+            <img src="Tool1.jfif" alt="Tool">
+            <img src="Tool2.jfif" alt="Tool">
+            <img src="Tool3.jfif" alt="Tool">
+        </div>
+    </div>
+
+    <!-- Sample Outputs -->
+    <div class="wire-box">
+        <div class="wire-header">Sample Outputs</div>
+        <div class="output-grid">
+            <img src="OUTPUTCP1.png" alt="OUTPUT CP">
+            <img src="OUTPUTCP2.png" alt="OUTPUT CP">
+            <img src="OUTPUTCSS1.jfif" alt="OUTPUT CSS">
+            <img src="OUTPUTCSS2.png" alt="OUTPUT CSS">
+        </div>
+    </div>
+
+</div>
+</section>
+<style>
+/* Vertical Carousel for Sample Outputs */
+.output-grid {
+    display: flex;
+    flex-direction: column; /* vertical stack */
+    gap: 15px;
+    overflow: hidden;
+    height: 300px; /* fixed height for visible area */
+    position: relative;
+}
+
+.output-grid img {
+    width: 90%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect stays */
+.output-grid img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #38bdf8;
+}
+</style>
+<script>
+// Vertical carousel animation for Sample Outputs
+const outputGrids = document.querySelectorAll('.output-grid');
+
+outputGrids.forEach(grid => {
+    const imgs = grid.querySelectorAll('img');
+    let index = 0;
+
+    function slideVertical() {
+        // Move all images up by one height
+        imgs.forEach((img, i) => {
+            img.style.transform = `translateY(-${index * 110}px)`; // 110px = image height + gap
+        });
+
+        index++;
+        if(index >= imgs.length) {
+            index = 0; // loop back to start
+        }
+    }
+
+    // Slide every 2 seconds
+    setInterval(slideVertical, 2000);
+});
+</script>
+
+<!-- ================= PROJECTS & PERFORMANCE TASKS ================= -->
+<section id="projects-performance">
+<h1>PROJECTS & PERFORMANCE TASKS</h1>
+
+<div class="pp-container">
+
+    <!-- LEFT SIDE -->
+    <div class="pp-column">
+
+        <div class="pp-header">INDIVIDUAL & GROUP</div>
+
+        <div class="pp-cards">
+
+            <div class="pp-card">
+                <h3>Individual</h3>
+                <img src="PROJECTINDIV1.jfif" alt="Individual Project" style="width:100%; border-radius:8px; margin-bottom:10px;">
+                <img src="PROJECTINDIV2.jfif" alt="Individual Project" style="width:100%; border-radius:8px; margin-bottom:10px;">
+            </div>
+
+            <div class="pp-card">
+                <h3>Group</h3>
+                <img src="PROJECTGROUP1.jfif" alt="Group Project" style="width:100%; border-radius:8px; margin-bottom:10px;">
+                <img src="PROJECTGROUP2.jfif" alt="Group Project" style="width:100%; border-radius:8px; margin-bottom:10px;">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="pp-column">
+
+        <div class="pp-header">DOCUMENTATION & ROLE</div>
+
+        <div class="pp-cards">
+
+            <div class="pp-card">
+                <h3>Documentation</h3>
+                <img src="PROJECTDOC1.jfif" alt="Documentation" style="width:100%; border-radius:8px; margin-bottom:10px;">
+                <img src="PROJECTDOC2.jfif" alt="Documentation" style="width:100%; border-radius:8px; margin-bottom:10px;">
+                <img src="PROJECTDOC3.jfif" alt="Documentation" style="width:100%; border-radius:8px; margin-bottom:10px;">
+            </div>
+
+            <div class="pp-card">
+                <h3>Role</h3>
+                 <ul class="pp-list">
+            <li>Leader</li>
+            <li>Co-Leader</li>
+        </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+<style>
+/* ================= PROJECTS & PERFORMANCE TASKS IMAGE ANIMATION ================= */
+.pp-card img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Hover lift & glow */
+.pp-card img:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 20px #38bdf8, 0 0 35px #0ea5e9;
+}
+
+/* Fade in on scroll */
+.pp-card img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+<script>
+// Animate PP card images on scroll
+const ppImages = document.querySelectorAll('.pp-card img');
+
+function revealPPImages() {
+    ppImages.forEach((img, index) => {
+        const rect = img.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            setTimeout(() => {
+                img.classList.add('visible');
+            }, index * 150); // staggered effect
+        }
+    });
+}
+
+window.addEventListener('scroll', revealPPImages);
+window.addEventListener('load', revealPPImages);
+</script>
+
+<!-- ================= CERTIFICATES & ACHIEVEMENTS ================= -->
+     <section id="certificates">
+<h1>CERTIFICATES & ACHIEVEMENTS</h1>
+
+<div class="ca-container">
+
+    <!-- AWARDS -->
+    <div class="ca-box">
+        <div class="ca-header">AWARDS</div>
+        <div class="ca-slider">
+    <div class="ca-track">
+        <img src="CERTIFICATEMEDAL1.png" class="ca-img">
+        <img src="CERTIFICATEMEDAL2.png" class="ca-img">
+        <img src="CERTIFICATE3.png" class="ca-img">
+        <img src="CERTIFICATEATTENDANCE4.png" class="ca-img">
+        <img src="CERTIFICATEPLAQUE5.png" class="ca-img">
+        <img src="CERTIFICATEPLAQUE6.png" class="ca-img">
+
+        <!-- Duplicate images for smooth infinite loop -->
+        <img src="CERTIFICATEMEDAL1.png" class="ca-img">
+        <img src="CERTIFICATEMEDAL2.png" class="ca-img">
+        <img src="CERTIFICATE3.png" class="ca-img">
+        <img src="CERTIFICATEATTENDANCE4.png" class="ca-img">
+        <img src="CERTIFICATEPLAQUE5.png" class="ca-img">
+        <img src="CERTIFICATEPLAQUE6.png" class="ca-img">
+    </div>
+</div>
+        <ul>
+            <li>With Honors</li>
+            <li>Perfect Attendance</li>
+            <li>Special Recognition For Sports</li>
+            <li>Special Recognition For School Representation - UPEIQ</li>
+            <li>1st Place in Badmninton(Doubles Category) District Meet</li>
+            <li>Champion Speech Choir - UPEIQ and NAPSPHIL</li>
+        </ul>
+    </div>   
+</div>
+</section>
+
+<script>
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+
+<!-- ================= WORK IMMERSION ================= -->
+<section id="immersion">
+<h1>WORK IMMERSION</h1>
+
+<div class="immersion-container">
+
+    <!-- ================= LEFT : COMPANY ================= -->
+    <div class="immersion-card immersion-company">
+
+    <!-- LEFT: COMPANY PHOTO -->
+    <div class="company-photo">
+        <img src="TWALOGO.png" alt="Company Photo">
+    </div>
+
+    <!-- RIGHT: COMPANY INFO -->
+    <div class="company-info">
+        <h3>Tayabas Western Academy</h3>
+        <p>📍 Location: Nadres St. Poblacion Candelaria, Quezon</p>
+        <p>📅 Duration: November 2025 - December 2025</p>
+    </div>
+
+</div>
+        <div class="immersion-card">
+            <h3>Description</h3>
+            <p>&nbsp;&nbsp; Ang front desk ng paaralan ang nagsisilbing lugar kung saan tinutulungan ang mga mag-aaral, magulang, at bisita. Ito ay tumutugon sa mga katanungan, 
+                nagdidirekta ng mga bisita sa tamang opisina o silid-aralan, at nagsasagawa ng mga simpleng gawaing administratibo tulad ng pagproseso ng attendance slips at visitor’s log. 
+                Nakakatulong din ang front desk office sa pagpapanatili ng kaligtasan sa paaralan at sa maayos na komunikasyon sa loob nito.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- ================= CENTER : TASKS ================= -->
+<div class="immersion-box">
+
+    <div class="immersion-header">📋 TASKS & RESPONSIBILITIES</div>
+
+    <div class="task-card immersion-task">
+        <img src="WORKIMMERSION1.jfif" class="task-img">
+        <h3>Cleaned the Front Desk Office</h3>
+    </div>
+
+    <div class="task-card immersion-task">
+        <img src="WORKIMMERSION2.jfif" class="task-img">
+        <h3>Arranging Work Immersion Portfolio</h3>
+    </div>
+
+    <div class="task-card immersion-task">
+        <img src="WORKIMMERSION3.jfif" class="task-img">
+        <h3>Assisting Students Late</h3>
+    </div>
+
+</div>
+    <!-- ================= RIGHT : REFLECTION ================= -->
+    <div class="immersion-box">
+
+        <div class="immersion-header">💡 REFLECTION</div>
+
+        <div class="immersion-card">
+            <h3>What I Learned</h3>
+            <ul>
+                <li>Applied ICT knowledge</li>
+                <li>Work professionalism</li>
+            </ul>
+        </div>
+
+        <div class="immersion-card">
+            <h3>Skills Applied</h3>
+            <span class="tag">ICT Skills</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Problem Solving</span>
+        </div>
+
+        <div class="immersion-card">
+            <h3>Challenges</h3>
+            <p>Pag-aadjust sa tunay na kapaligiran ng trabaho at paglutas ng mga teknikal na problema.</p>
+        </div>
+
+        <div class="immersion-card">
+            <h3>Outcome</h3>
+            <p>Nagkaroon ng mas mataas na kumpiyansa sa sarili at nakakuha ng tunay na karanasan sa trabaho.</p>
+        </div>
+
+        <div class="experience-quote">
+            “Ang aking karanasan sa immersion ay nakatulong sa aking pag-unlad sa aspeto ng propesyon at personal na buhay.”
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<section id="career">
+<h1>Career Plan</h1>
+
+<div class="career-container">
+
+    <div class="career-content">
+
+        <!-- Target Course -->
+        <div class="plan-box">
+            <h3>Target Course / Trabaho</h3>
+            <strong>Course:</strong> Bachelor of Science in Information Technology<br><br>
+
+            <ul>
+                <li>Focus on Web Development</li>
+                <li>Improve Programming Skills</li>
+                <li>Build Real Projects</li>
+            </ul>
+
+            <br>
+            <strong>Industry:</strong> Technology<br>
+            <strong>Role:</strong> Developer / IT Specialist
+        </div>
+
+        <!-- Image -->
+        <div class="career-image">
+            <img src="CAREERPLAN1.jfif" alt="Career Plan Image">
+        </div>
+
+        <!-- Paragraph -->
+        <div class="career-paragraph">
+            <p>
+            Pinili kong tahakin ang pagiging web developer dahil sa aking karanasan sa ICT strand na nakatulong upang matuklasan ko ang aking hilig sa coding at pagbuo ng website.
+            Sa paggawa ng mga programming activities at sa pag-develop ng sarili kong E-Portfolio website, napagtanto ko na nasisiyahan ako sa pagdidisenyo ng web layout,
+            pag-oorganisa ng nilalaman, at paglutas ng mga error sa coding.
+            </p>
+
+            <p>
+            Malaki ang ginagampanan ng web development sa makabagong digital na mundo ngayon. Bilang isang magiging web developer, 
+            nais kong makabuo ng mga responsive at user-friendly na website na makakatulong sa paglago ng mga negosyo at komunidad.
+            </p>
+        </div>
+
+        <!-- Quote -->
+        <div class="quote">
+            “Ang teknolohiya ang magiging kinabukasan, at nais kong maging bahagi sa pagbuo nito.”
+        </div>
+
+    </div>
+
+</div>
+</section>
+<section id="acknowledgement">
+    <h1>Acknowledgement</h1>
+
+    <div class="ack-container">
+        <div class="ack-box">
+
+            <p>
+                &nbsp;&nbsp; Ang paggawa ng E-Portfolio ay naging mahalagang bahagi ng aking  paglalakbay bilang isang mag-aaral.
+                Hindi lamang nito ipinapakita ang aking mga natutunan at nagawang proyekto, kundi pati na rin ang aking paglago at mga aral na nakuha ko 
+                sa loob ng Senior High School
+            </p>
+
+            <p>
+                Lubos akong nagpapasalamat sa aking mga guro sa kanilang gabay, tiyaga, at suporta, lalo na sa larangan ng ICT at Computer Programming. 
+                Malaki ang naitulong ng kanilang mga aral upang mapaunlad ko ang aking kakayahan at magkaroon ng mas matibay na kumpiyansa sa paggawa ng coding at pagbuo ng mga website. Nagpapasalamat din ako sa aking mga kaklase sa mga karanasang 
+                aming pinagsaluhan na naging bahagi ng aking pagkatuto.
+            </p>
+
+            <p>
+                Higit sa lahat, taos-puso akong nagpapasalamat sa aking pamilya sa kanilang walang sawang suporta, pag-unawa, at inspirasyon. Ang kanilang paniniwala sa aking kakayahan ang nagsisilbing lakas ko 
+                upang patuloy na magsikap at maabot ang aking mga pangarap.
+
+            </p>
+
+            <div class="ack-signature">
+                —PF Valiente Taruza
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+const text = "PF V. Taruza";
+let index = 0;
+const speed = 100;
+
+function typeEffect() {
+    if (index < text.length) {
+        document.getElementById("typed-name").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, speed);
+    }
+}
+
+window.onload = typeEffect;
+</script>
+<script>
+// Company image scroll animation
+const companyImg = document.querySelector('.company-photo img');
+
+function revealCompanyImage(){
+    const rect = companyImg.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+        companyImg.classList.add('visible');
+    }
+}
+
+window.addEventListener('scroll', revealCompanyImage);
+window.addEventListener('load', revealCompanyImage);
+</script>
+<script>
+// Career image scroll animation
+const careerImg = document.querySelector('.career-image img');
+
+function revealCareerImage(){
+    if(!careerImg) return;
+
+    const rect = careerImg.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+        careerImg.classList.add('visible');
+    }
+}
+
+window.addEventListener('scroll', revealCareerImage);
+window.addEventListener('load', revealCareerImage);
+</script>
+<script>
+function startPortfolio(){
+    const frontPage = document.getElementById("front-page");
+
+    frontPage.style.opacity = "0";
+
+    setTimeout(()=>{
+        frontPage.style.display = "none";
+    },600);
+
+    document.body.style.overflow = "auto";
+}
+
+/* Prevent scrolling before start */
+window.onload = function(){
+    document.body.style.overflow = "hidden";
+};
+</script>
+</body>
+</html>
